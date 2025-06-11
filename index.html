@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>A Origem de Hades</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook&family=EB+Garamond&display=swap" rel="stylesheet">
+
+  <style>
+
+    *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1em;
+  font-family: 'Georgia', serif;
+  font-size: 1.2em; /* AUMENTO DO TAMANHO BASE DA FONTE */
+  background: url('https://www.transparenttextures.com/patterns/black-felt.png');
+  color: #eee;
+}
+
+/* ===============================
+   Cabeçalho (Hero)
+   =============================== */
+header.hero {
+  background: url('personagem.jpg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-shadow: 2px 2px 4px #000;
+  border-bottom: 5px double #ff4444;
+}
+
+.hero h1 {
+  font-size: 4.5em
+  font-family: 'EB Garamond', serif;
+  color: #ff4444;
+}
+
+.hero p {
+  font-size: 2.8em;
+  font-style: italic;
+  font-family: 'Georgia', serif;
+  color: #fff;
+  text-shadow: 3px 3px 6px #000;
+}
+
+/* ===============================
+   Navegação
+   =============================== */
+nav {
+  background-color: #1a0f0f;
+  display: flex;
+  justify-content: center;
+  gap: 5em;  /* ← Esse é o espaçamento entre os links */
+  padding: 1em;
+  border-bottom: 2px solid #5c1f1f;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+nav a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  font-size: 2em
+}
+
+nav a:hover {
+  color: #ff4444;
+}
+
+/* ===============================
+   Seções de Conteúdo
+   =============================== */
+section {
+  padding: 3em 2em;
+  max-width: 900px;
+  margin: 3em auto;
+  background-color: rgba(20, 10, 10, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 20px #000;
+  overflow: hidden;
+}
+
+section h2 {
+  text-align: center;
+  border-bottom: 2px solid #ff4444;
+  padding-bottom: 0.5em;
+  font-size: 2em
+  font-family: 'UnifrakturCook', cursive;
+  color: #ff9999;
+}
+
+section img {
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 3em auto; /* Margem superior e inferior aumentadas */
+  border-radius: 8px;
+  box-shadow: 0 0 12px #000;
+}
+
+/* ===============================
+   Fichas
+   =============================== */
+.ficha ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ficha li {
+  background-color: #222;
+  margin: 0.5em 0;
+  padding: 1em;
+  border-left: 4px solid #ff4444;
+  border-radius: 5px;
+  font-size: 1.05em
+  font-family: 'Georgia', serif;
+}
+
+.ficha img {
+  width: 60%;
+  max-width: 400px;
+  display: block;
+  margin: 3em auto; /* Aumentado de 1em para 3em */
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+}
+
+/* ===============================
+   Galeria de Imagens
+   =============================== */
+.galeria h2 {
+  width: 100%;
+  text-align: center;
+  border-bottom: 2px solid #ff4444;
+  padding-bottom: 0.5em;
+  margin-bottom: 1.5em; /* espaço abaixo da linha vermelha */
+  font-family: 'UnifrakturCook', cursive;
+  color: #ff9999;
+  font-size: 2em;
+}
+
+.galeria .imagens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  justify-content: center;
+  padding: 1em;
+}
+
+.galeria .imagens img {
+  width: calc(45% - 1em);
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #000;
+  transition: transform 0.3s;
+}
+
+.galeria .imagens img:hover {
+  transform: scale(1.05);
+}
+
+
+/* ===============================
+   Outras Seções
+   =============================== */
+.imagem-sugerida {
+  text-align: center;
+  margin: 2em 0;
+  font-style: italic;
+  color: #aaa;
+}
+
+footer {
+  text-align: center;
+  padding: 2em 1em;
+  background-color: #1a0f0f;
+  color: #888;
+  border-top: 2px solid #5c1f1f;
+}
+
+/* ===============================
+   Responsivo (Mobile)
+   =============================== */
+@media (max-width: 768px) {
+  header.hero {
+    height: auto;
+    padding: 4em 1em;
+  }
+
+  .hero h1 {
+    font-size: 2.2em;
+  }
+
+  .hero p {
+    font-size: 1.3em;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+
+  section {
+    padding: 2em 1em;
+    margin: 1.5em 1em;
+  }
+
+  .ficha li {
+    font-size: 0.95em;
+    padding: 0.8em;
+  }
+
+  .galeria img {
+    width: 100%;
+    height: auto;
+  }
+}
+  </style>
+
+</head>
+
+<body>
+
+  <header class="hero">
+
+    <h1>Hades: Filho do Proibido</h1>
+
+    <p>"Nasci no Éden... mas floresci no Inferno."</p>
+
+  </header>
+
+ 
+
+  <nav>
+
+    <a href="#historia">História</a>
+
+    <a href="#ficha">Ficha</a>
+
+    <a href="#galeria">Galeria</a>
+
+  </nav>
+
+ 
+
+  <section id="historia">
+
+    <h2>A Origem</h2>
+
+    <p>Era uma vez uma criança que nasceu nos Jardins do Éden, no Inferno. Seu nome era <strong>Hades, Jumento de Jesus</strong>. Filho proibido de Adão, um anjo, e Maria, uma demônia, Hades cresceu sem o pai e mal via a mãe que trabalhava o tempo todo. Sofria bullying dos outros demônios por sua origem.</p>
+
+   <img src="fotos/hades_triste_no_jardim.png">
+
+ 
+
+    <p>Desde pequeno ajudava nos Jardins do Éden, desenvolvendo habilidades como druida, compreendendo e comunicando-se com as plantas. Aos 19 anos, um misterioso sabotador destruiu parte do jardim. Hades foi injustamente acusado e aprisionado por Lúcifer no castelo por 12 dias.</p>
+
+    <img src="fotos/jardim_em_chamas.png">
+
+ 
+
+    <p>Na cela escura do castelo, Hades refletia sobre sua origem, sua missão e o destino que parecia traçado para ele. A presença constante da dor, da dúvida e do abandono moldava lentamente o espírito de um guerreiro silencioso, que ainda não sabia o quanto o mundo precisava dele.</p>
+
+    <img src="fotos/hades_na_cela.png">
+
+ 
+
+    <p>Sua mãe, em uma das visitas, lhe entregou um pó mágico que abriu um portal. Hades fugiu para o mundo humano, onde sua verdadeira história começa...</p>
+
+    <img src="fotos/fugindo_do_Éden.png">
+
+  </section>
+
+ 
+
+  <section class="ficha" id="ficha">
+
+    <h2>Ficha do Personagem</h2>
+
+    <ul>
+
+      <img src="fotos/Hades.jpg">
+
+      <li><strong>Nome:</strong> Hades, Jumento de Jesus</li>
+
+      <li><strong>Classe:</strong> Druida</li>
+
+      <li><strong>Raça:</strong> Suraggel (Sulfure)</li>
+
+      <li><strong>Nível:</strong> 3</li>
+
+      <li><strong>Magias:</strong> Escuridão, Controlar Plantas, Arma Mágica</li>
+
+      <li><strong>Especializações:</strong> Cura, Fortitude, Intuição, Jogatina, Ladinagem, Nobreza, Percepção, Sobrevivência, Vontade</li>
+
+      <li><strong>Atributos:</strong> Força 2, Destreza 3, Constituição 1, Inteligência 3, Sabedoria 3, Carisma -1</li>
+
+      <li><strong>Ataques:</strong> Mordida, Foice, Escudo Leve</li>
+
+      <li><strong>Poderes e Habilidades:</strong> Herança Divina, Sombras Profanas, Devoto Fiel, Empatia Selvagem, Magias, Caminho dos Ermos, Venefício, Foco em Magia, Pele Corrompida, Urro Divino, Presas Afiadas</li>
+
+      <li><strong>Armadura:</strong> Gibão de Peles</li>
+
+    </ul>
+
+  </section>
+
+ 
+
+<section class="galeria" id="galeria">
+  <h2>Galeria</h2>
+  <div class="imagens">
+    <img src="fotos/casal.png">
+    <img src="fotos/hades_com_mãe.png">
+    <img src="fotos/regando.png">
+  </div>
+</section>
+
+ 
+
+  <footer>
+
+    <p>Site criado por [Leonardo Ladeira] • 2025</p>
+
+  </footer>
+
+</body>
+
+</html>
