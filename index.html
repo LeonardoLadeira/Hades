@@ -229,11 +229,16 @@ footer {
     padding: 0.8em;
   }
 
-  .galeria img {
-    width: 100%;
-    height: auto;
-    transform: scale(1.1);
+.galeria img {
+  width: 100vw; /* ocupa toda a largura da tela */
+  max-width: 600px; /* limite máximo para evitar exageros */
+  margin: 0 auto;
+  display: block;
   }
+  .galeria {
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
 }
   </style>
 
